@@ -12,7 +12,7 @@ app.get('/go', (req, res) => {
 	const weibo = new SinaWeibo(process.env.WEIBO_CLIENT_ID, process.env.WEIBO_CLIENT_SECRET);
 
 	const url = weibo.getAuthorizeUrl({
-		redirect_uri:'https://weibo-clear.herokuapp.com/weiboAuthorizeUrlCallback',
+		redirect_uri:'https://weibo-clear.herokuapp.com/sinaweibo/callback',
 		response_type:'code'
 	});
 
@@ -20,10 +20,6 @@ app.get('/go', (req, res) => {
 	res.write(url);
 	res.write(' end.');
 	res.end();
-});
-
-app.get('/weiboAuthorizeUrlCallback', (req, res) => {
-	res.send('/weiboAuthorizeUrlCallback working');
 });
 
 app.get('/sinaweibo/callback', (req, res) => {
