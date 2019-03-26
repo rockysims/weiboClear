@@ -1,0 +1,8 @@
+{
+  "name": "weiboClear",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/rockysims/weiboClear.git",
+  "author": "Rocky Sims <rocky.sims@gmail.com>",
+  "license": "MIT"
+}
