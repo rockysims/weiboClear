@@ -16,5 +16,9 @@
   "dependencies": {
     "express": "^4.16.4",
     "node-sina-weibo": "^0.0.10"
+  },
+  "devDependencies": {
+    "tsc": "^1.20150623.0",
+    "typescript": "3.1.6"
   }
 }
