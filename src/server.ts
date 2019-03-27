@@ -27,7 +27,9 @@ app.get('/sinaweibo/callback', (req, res) => {
 		}, function (err: any, result: any, accessToken: string) {
 			if (err) res.send(err);
 			else {
-				weibo.GET('friendships/followers', {}, function(result: any) {
+				weibo.GET('friendships/followers', {
+					uid: 6088256551
+				}, function(result: any) {
 					console.log('friendships/followers result: ', result);
 					res.send(result);
 				});
