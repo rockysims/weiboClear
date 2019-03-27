@@ -20,11 +20,13 @@ app.get('/login', (req, res) => {
 });
 
 app.get('/sinaweibo/callback', (req, res) => {
+	console.log('req.params.code: ', req.params.code);
 	weibo.getAccessToken({
 			code: req.params.code,
 			grant_type: 'authorization_code',
 			redirect_uri: 'https://weibo-clear.herokuapp.com/sinaweibo/callback'
 		}, function (err: any, result: any, accessToken: string) {
+			console.log('accessToken: ', accessToken);
 			if (err) res.send(err);
 			else {
 				weibo.GET('Friendships/followers', {}, function(result: any) {
