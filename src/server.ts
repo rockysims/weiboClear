@@ -20,9 +20,9 @@ app.get('/login', (req, res) => {
 });
 
 app.get('/sinaweibo/callback', (req, res) => {
-	console.log('req.params.code: ', req.params.code);
+	console.log('req.query.code: ', req.query.code);
 	weibo.getAccessToken({
-			code: req.params.code,
+			code: req.query.code,
 			grant_type: 'authorization_code',
 			redirect_uri: 'https://weibo-clear.herokuapp.com/sinaweibo/callback'
 		}, function (err: any, result: any, accessToken: string) {
