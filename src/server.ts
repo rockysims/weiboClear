@@ -23,7 +23,7 @@ app.get('/sinaweibo/callback', (req, res) => {
 	weibo.getAccessToken({
 			code: req.params.code,
 			grant_type: 'authorization_code',
-			redirect_uri: 'https://weibo-clear.herokuapp.com/sinaweibo/callback2'
+			redirect_uri: 'https://weibo-clear.herokuapp.com/sinaweibo/callback'
 		}, function (err: any, result: any, accessToken: string) {
 			if (err) res.send(err);
 			else {
@@ -34,10 +34,6 @@ app.get('/sinaweibo/callback', (req, res) => {
 			}
 		}
 	);
-});
-
-app.get('/sinaweibo/callback2', (req, res) => {
-	res.send('/sinaweibo/callback2 working');
 });
 
 app.listen(port);
